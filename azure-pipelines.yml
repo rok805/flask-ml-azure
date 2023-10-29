@@ -31,7 +31,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      main: local
+      main: pool
     steps:
     - task: UsePythonVersion@0
       inputs:
@@ -67,7 +67,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
-      name: local
+      name: pool
     environment: $(environmentName)
     strategy:
       runOnce:
