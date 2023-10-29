@@ -31,7 +31,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      main: pool
+      main: Default
     steps:
     - task: UsePythonVersion@0
       inputs:
@@ -67,7 +67,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
-      name: pool
+      name: Default
     environment: $(environmentName)
     strategy:
       runOnce:
