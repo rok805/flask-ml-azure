@@ -8,7 +8,7 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '23517537-7459-4014-9f99-d729df84f483'
+  azureServiceConnectionId: 'connection-cheongrok-service'
 
   # Web app name
   webAppName: 'cheongrok-service'
