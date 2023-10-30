@@ -95,6 +95,7 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
+        az login
         az webapp stop --name cheongrok-service --resource-group rok805_rg_5040
         az webapp start --name cheongrok-service --resource-group rok805_rg_5040
       displayName: 'Restart API'
