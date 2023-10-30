@@ -32,7 +32,7 @@ def postprocessing(json_payload, prediction_tensor):
 
 @app.route("/")
 def home():
-    html = "<h3>애저 파이프라인을 이용한 지속적 배포</h3>"
+    html = "<h3>애저 파이프라인을 이용한 지속적 배포 - CI/CD 테스트</h3>"
     return html.format(format)
 
 
