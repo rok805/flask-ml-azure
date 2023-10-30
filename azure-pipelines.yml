@@ -85,3 +85,16 @@ stages:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+
+- stage: RunApp
+  displayName: 'Run API'
+  dependsOn: Deploy  # Deploy 스테이지가 성공한 후에 실행
+  jobs:
+  - job: RunAppJob
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - script: |
+        az webapp stop --name cheongrok-service --resource-group rok805_rg_5040
+        az webapp start --name cheongrok-service --resource-group rok805_rg_5040
+      displayName: 'Restart API'
